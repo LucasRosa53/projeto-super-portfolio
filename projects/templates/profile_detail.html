@@ -14,13 +14,24 @@
   <h3>Projetos</h3>
   <ul>
     {% for project in profile.projects.all %}
-      <li>
-        <p>{{ project.name }}</p>
-        <p>Description: {{ project.description }}</p>
-        <p>Github URL: {{ project.github_url }}</p>
-        <p>Keyword: {{ project.keyword }}</p>
-        <p>Key Skill: {{ project.key_skill }}</p>
-      </li>
+    <li>
+      <p>{{ project.name }}</p>
+      <p>Description: {{ project.description }}</p>
+      <p>Github URL: {{ project.github_url }}</p>
+      <p>Keyword: {{ project.keyword }}</p>
+      <p>Key Skill: {{ project.key_skill }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <h2>Certificações</h2>
+  <ul>
+    {% for certificate in certificates %}
+    <li>
+      Nome: {{ certificate.name }}<br />
+      URL: {{ certificate.url }}<br />
+      Instituição: {{ certificate.certifying_institution }}<br />
+    </li>
     {% endfor %}
   </ul>
 </body>
