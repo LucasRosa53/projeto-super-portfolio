@@ -19,10 +19,12 @@ class CertificateSerializer(serializers.ModelSerializer):
         model = Certificate
         fields = "__all__"
 
+
 class NestedCertificatesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Certificate
         fields = ["id", "name", "timestamp"]
+
 
 class CertifyingInstitutionSerializer(serializers.ModelSerializer):
     certificates = NestedCertificatesSerializer(many=True)

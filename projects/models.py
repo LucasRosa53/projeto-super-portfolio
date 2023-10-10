@@ -43,12 +43,13 @@ class Project(models.Model):
 class CertifyingInstitution(models.Model):
     name = models.CharField(max_length=100, blank=False)
     url = models.URLField(
-    validators=[URLValidator(), MaxLengthValidator(limit_value=500)],
-    blank=False
-)
+        blank=False,
+        validators=[URLValidator(), MaxLengthValidator(limit_value=500)],
+        )
 
     def __str__(self):
         return self.name
+
 
 class Certificate(models.Model):
     name = models.CharField(max_length=100, blank=False)
